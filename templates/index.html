@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Voice to text analysis</title>
+        <style>
+ 
+        body{ 
+	        background-image:url('https://safa.ps/uploads//images/923ddbe85ad0f3d84c4dde2c301b3325.jpg'); 
+            background-size: cover;
+            }   
+         .p1 {
+            font-family: "Lucida Console", "Courier New", monospace;
+          } 
+          img {
+            width: 200px;
+                }
+        * {
+            box-sizing: border-box;
+        }
+        /* Create two equal columns that floats next to each other */
+        .column {
+        float: left;
+        width: 50%;
+        padding: 10px;
+        height: 600px; /* Should be removed. Only for demonstration */
+        }
+        /* Clear floats after the columns */
+        .row:after {
+        content: "";
+        ;
+        clear: both;
+        }   
+        img{
+        display:block;
+        width:75%; 
+        height:75%;
+        object-fit: cover;
+        }
+        input[type=button], input[type=submit], input[type=file] {
+  background-color: #970492;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+        </style>      
+    <body class="p1">
+
+        <div id="SpeechContainer">
+            <h1>Uploud new file</h1>
+            <form method="post" enctype="multipart/form-data">
+                <center><input type="file" name="file"><h1 style="color:rgb(255, 0, 247);">Please make sure it's file.wav .</h1></center>
+                <br>
+                
+                <center><input type="submit" value="Transcribe"></center>
+            </form>
+            {% if transcript != "" %}
+            <div class="raw">
+                <div class="column" style="background-color:#aaa;">
+                    <h1>Transcript</h1>
+                    <p>{{transcript}}</p>
+                    
+                </div>
+                <div class="column" style="background-color:#bbb;">
+                    <h1>most frequent words</h1>
+                    <center><div id="chart" class="chart"></div></center>
+                </div>
+            </div>           
+            {% endif%}
+        </div>
+    </body>
+    <script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
+                    <script type='text/javascript'>
+                        var graphs = {{graphJSON | safe }};
+                         Plotly.plot('chart',graphs,{});
+                    </script>
+</html>
