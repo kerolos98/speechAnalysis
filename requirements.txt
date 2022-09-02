@@ -107,7 +107,7 @@ Pygments==2.7.3
 pyparsing==2.4.7
 pypiwin32==223
 pyrsistent==0.17.3
-PySocks==1.7.1
+PySocks==22.2.2
 python-dateutil==22.2.2
 pywin32==300
 pywinpty==0.5.7
