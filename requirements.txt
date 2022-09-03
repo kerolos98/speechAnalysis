@@ -107,7 +107,7 @@ Pygments==2.7.3
 pyparsing==2.4.7
 pypiwin32==223
 pyrsistent==0.18.1
-python-dateutil==22.2.2
+python-dateutil==2.8.2
 pywin32==300
 pywinpty==0.5.7
 PyYAML==5.3.1
@@ -143,3 +143,4 @@ Werkzeug==2.1.2
 wincertstore==0.2
 wrapt==1.12.1
 zipp==3.8.0
+pysock==0.3.2
