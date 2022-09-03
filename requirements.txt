@@ -1,4 +1,4 @@
-pyproject.toml==0.10.2
+pyproject.toml==0.0.10
 spicy==0.16.0
 numpy==1.22.4
 absl-py==1.2.0
